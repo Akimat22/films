@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Films Français</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Films Classiques Français</h1>
+        <nav>
+            <button id="loadMoviesButton">Voir Films</button>
+            <button id="importBanger">Importer les classiques</button>
+            <button id="importNavets">Importer les navets</button>
+            <button id="clearButton">Clear</button>
+            <a href="/add_movie.html">
+                <button id="addMovieButton">Ajouter un Film</button>
+            </a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="filters">
+            <p>Choissiez une note pour classer les films entre excellents et navets de 1 à 5</p>
+            <div>
+                <input type="range" id="goodNote" name="goodNote" min="0" max="5" value="4" />
+                <label for="goodNote">Excellents</label>
+            </div>
+            <div>
+                <input type="range" id="badNote" name="badNote" min="0" max="5" value="2" />
+                <label for="badNote">Navets</label>
+            </div>
+            <select id="FiltrePays">
+                <option value="" disabled selected>Origine du film</option>
+                <option value="TOUS">TOUS</option>
+                <option value="France">France</option>
+                <option value="Angleterre">Angleterre</option>
+                <option value="Belgique">Belgique</option>
+                <option value="Pays-Bas">Pays-Bas</option>
+            </select>
+        </section>
+
+        <section id="movies-container" class="movies-grid"></section>
+    </main>
+
+    <template id="movie-template">
+        <div class="movie-card">
+            <img class="lienImage" src="" alt="">
+            <div class="content">
+                <h2 class="nom"></h2>
+                <p><strong>Année :</strong> <span class="dateDeSortie"></span></p>
+                <p><strong>Réalisateur :</strong> <span class="realisateur"></span></p>
+                <p><strong>Note de la critique : </strong> <span class="note"></span></p>
+                <p><strong>Note du public : </strong> <span class="notePublic"></span></p>
+                <p><strong>Différence : </strong> <span class="noteDifference"></span></p>
+                <p><strong>Compagnie :</strong> <span class="compagnie"></span></p>
+                <p class="description"></p>
+                <button class="delete-button" data-id="{{movie.id}}">Supprimer</button>
+                <button class="edit-button">Modifier</button>
+            </div>
+        </div>
+    </template>
+
+    <template id="banger">
+        <div class="movie-card_banger">
+            <img class="lienImage" src="" alt="">
+            <div class="content">
+                <h2 class="nom"></h2>
+                <p><strong>Année :</strong> <span class="dateDeSortie"></span></p>
+                <p><strong>Réalisateur :</strong> <span class="realisateur"></span></p>
+                <p><strong>Note de la critique : </strong> <span class="note"></span></p>
+                <p><strong>Note du public : </strong> <span class="notePublic"></span></p>
+                <p><strong>Différence : </strong> <span class="noteDifference"></span></p>
+                <p><strong>Compagnie :</strong> <span class="compagnie"></span></p>
+                <p class="description"></p>
+                <button class="delete-button" data-id="{{movie.id}}">Supprimer</button>
+                <button class="edit-button">Modifier</button>
+            </div>
+        </div>
+    </template>
+
+    <template id="navets">
+        <div class="movie-card">
+            <img class="lienImage" src="" alt="">
+            <div class="content">
+                <h2 class="nom"></h2>
+                <p><strong>Ne vaut même pas la peine </strong>
+                    <button class="delete-button" data-id="{{movie.id}}">Supprimer</button>
+                    <button class="edit-button">Modifier</button>
+            </div>
+        </div>
+    </template>
+
+    <div id="edit-movie-form" style="display: none;">
+        <h2>Modifier le film</h2>
+        <form id="edit-form">
+            <input type="hidden" id="edit-movie-id" name="id">
+            <label>Nom du film:</label>
+            <input type="text" id="edit-nom" name="nom" required><br>
+            <label>Date de sortie:</label>
+            <input type="text" id="edit-dateDeSortie" name="dateDeSortie" required><br>
+            <label>Réalisateur:</label>
+            <input type="text" id="edit-realisateur" name="realisateur" required><br>
+            <label>Note:</label>
+            <input type="number" id="edit-note" name="note" step="0.1" min="0" max="5" required><br>
+            <label>Note du public:</label>
+            <input type="number" id="edit-notePublic" name="notePublic" step="0.1" min="0" max="5"><br>
+            <label>Compagnie:</label>
+            <input type="text" id="edit-compagnie" name="compagnie" required><br>
+            <label>Description:</label>
+            <textarea id="edit-description" name="description" required></textarea><br>
+            <label>Lien de l'image:</label>
+            <input type="text" id="edit-lienImage" name="lienImage" required><br>
+            <label>Origine:</label>
+            <select id="edit-origine" name="origine" required>
+                <option value="France">France</option>
+                <option value="Angleterre">Angleterre</option>
+                <option value="Belgique">Belgique</option>
+                <option value="Pays-Bas">Pays-Bas</option>
+            </select><br>
+            <button type="submit">Enregistrer</button>
+            <button type="button" id="cancel-edit">Annuler</button>
+        </form>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

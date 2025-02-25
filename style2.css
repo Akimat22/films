@@ -1,0 +1,32 @@
+body {
+    background-image: url('3d-wonderful-world-br2dd4xxcj7yfqtf.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.movie-card_banger {
+    border: 2px solid gold;
+}
+
+.movie-card_banger h2 {
+    color: gold;
+}
+
+#FiltrePays {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+#FiltrePays:hover {
+    background-color: #f0f0f0;
+}
+
+#FiltrePays:focus {
+    outline: none;
+    border-color: #007BFF;
+    background-color: #e9f6ff;
+}

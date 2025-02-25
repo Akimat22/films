@@ -1,0 +1,116 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    color: #f00606;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header {
+    background-color: #0fa828;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav button {
+    background-color: #092ae7;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav button:hover {
+    background-color: #777;
+}
+
+.movies-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.movie-card,
+.movie-card_banger {
+    background-color: #fff;
+
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.movie-card:hover,
+.movie-card_banger:hover {
+    transform: translateY(-10px);
+}
+
+.movie-card img,
+.movie-card_banger img {
+    width: 100%;
+    height: auto;
+}
+
+.movie-card .content,
+.movie-card_banger .content {
+    padding: 15px;
+}
+
+.movie-card h2,
+.movie-card_banger h2 {
+    font-size: 1.2rem;
+    margin: 0 0 10px;
+}
+
+.movie-card p,
+.movie-card_banger p {
+    font-size: 0.9rem;
+    margin: 5px 0;
+}
+
+.delete-button,
+.edit-button {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.delete-button:hover,
+.edit-button:hover {
+    background-color: #c0392b;
+}
+
+#edit-movie-form {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}

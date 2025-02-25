@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter un film</title>
+    <link rel="stylesheet" href="add_movie.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Ajouter un Film</h1>
+        <a href="index.html">
+            <button id="backToHome">🏠 Retour à l'accueil</button>
+        </a>
+    </header>
+
+    <main>
+        <form id="movie-form">
+            <label for="nom">Nom du Film:</label>
+            <input type="text" id="nom" name="nom" placeholder="Interstellar" required><br><br>
+
+            <label for="dateDeSortie">Date de Sortie :</label>
+            <input type="text" id="dateDeSortie" name="dateDeSortie" placeholder="2025" required><br><br>
+
+            <label for="realisateur">Réalisateur:</label>
+            <input type="text" id="realisateur" name="realisateur" placeholder="Christopher Nolan" required><br><br>
+
+            <label for="note">Note de la Critique (0-5):</label>
+            <input type="number" id="note" name="note" min="0" max="5" step="0.1" placeholder="4.5"><br><br>
+
+            <label for="notePublic">Note du Public (0-5):</label>
+            <input type="number" id="notePublic" name="notePublic" min="0" max="5" step="0.1" placeholder="3.8"><br><br>
+
+            <label for="compagnie">Compagnie:</label>
+            <input type="text" id="compagnie" name="compagnie" placeholder="Indépendant" required><br><br>
+
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" placeholder="Description du film..."
+                required></textarea><br><br>
+
+            <label for="origine">Origine:</label>
+            <input type="text" id="origine" name="origine" placeholder="France" required><br><br>
+
+            <label for="lienImage">Lien de l'image:</label>
+            <input type="text" id="lienImage" name="lienImage" placeholder="Interstellar.jpg"><br><br>
+
+            <button type="submit">Ajouter le Film</button>
+        </form>
+    </main>
+
+    <script src="add_movie.js"></script>
+</body>
+
+</html>
